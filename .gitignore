@@ -1,0 +1,6 @@
+# COMPILATION BIN
+build/
+
+# VIM SWAP FILES
+*.swp
+*.swo
