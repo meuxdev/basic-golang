@@ -5,6 +5,33 @@ import (
 	"math"
 )
 
+func pckgExampleFmt() {
+	helloMsg := "Hello"
+	worldMsg := "World"
+
+	// print ln
+	fmt.Println(helloMsg, worldMsg)
+	fmt.Println(helloMsg, worldMsg)
+
+	// print F
+	name := "Alejandro"
+	age := 24
+	fmt.Printf("%s has %d years old\n", name, age)
+	// %s -> for string
+	// %d -> for integer
+	// %v -> for any value
+	fmt.Printf("%v has %v years old\n", name, age)
+
+	// Springf
+	var msg string = fmt.Sprintf("%s has %d years old\n", name, age) // saves this string to var string
+	fmt.Println(msg)
+
+	// type data
+	alive := true
+	fmt.Printf("Type of is alive: %T \n", alive) // %T -> type of the var
+	fmt.Printf("Type of is age: %T \n", age)     // %T -> type of the var
+}
+
 func circleArea(radius float64) {
 	const pi float64 = 3.1416
 	area := pi * math.Pow(radius, 2)
@@ -93,4 +120,5 @@ func main() {
 	circleArea(3)
 	rectangleArea(12.3, 14.3)
 	trapezoidArea(12.3, 14.3, 12.3)
+	pckgExampleFmt()
 }
