@@ -16,6 +16,37 @@ func sayHelloWithAge(name string, age uint32, height, weight float64) {
 	// %s  -> string
 }
 
+// CYCLE FOR
+func forCycle() {
+	// Conditional for
+	for i := -1; i <= 10; i++ {
+		fmt.Println(i)
+	}
+
+	// for while
+	counter := 0
+	for counter <= 5 {
+		fmt.Println(counter)
+		counter++
+	}
+
+	// for forever
+	counterForever := 0
+	for {
+		fmt.Println(counterForever)
+		if counterForever == 1000 {
+			break
+		}
+		counterForever++
+	}
+
+	fmt.Println("COUNTDOWN STARTING....")
+	var i int
+	for i = 100; i > 0; i-- {
+		fmt.Println(i)
+	}
+}
+
 func double(a int) int {
 	return a * 2
 }
@@ -155,4 +186,5 @@ func main() {
 	fmt.Println("Result Area Circle: ", resultAreaCircle)
 	fmt.Printf("Result Area Rectangle: %g\nErrors: %t ", resultAreaRectangle, errors)
 
+	forCycle()
 }
