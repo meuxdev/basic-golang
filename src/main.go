@@ -1,23 +1,18 @@
 package main
 
-import "fmt"
-
-type Car struct {
-	brand string
-	model string
-	power uint
-	year  uint
-}
+import (
+	"fmt"
+	pk "main/mypackage"
+)
 
 func main() {
+	var myCar pk.CarPublic
+	myCar.Brand = "Supra"
+	myCar.Year = 2001
+	myCar.Model = "MK4"
 
-	myCar := Car{brand: "Supra", model: "mk4"}
 	fmt.Println(myCar)
 
-	// other way to instance
+	pk.Print("My personal Print from another package")
 
-	var otherCar Car
-	otherCar.brand = "Ferrari"
-
-	fmt.Println(otherCar)
 }
