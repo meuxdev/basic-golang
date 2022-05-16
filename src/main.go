@@ -3,9 +3,17 @@ package main
 import (
 	"fmt"
 	"main/pc"
+	"sync"
+	"time"
 
 	"main/figures"
 )
+
+func say(text string, wg *sync.WaitGroup) {
+
+	defer wg.Done()
+	fmt.Println(text)
+}
 
 func modGlobalValue(val *int) {
 	*val = 10
@@ -41,5 +49,19 @@ func main() {
 	figures.CalculateArea(rectangle)
 	figures.CalculateArea(triangle)
 	figures.CalculateArea(square)
+
+	var wg sync.WaitGroup
+
+	fmt.Println("Hello")
+	wg.Add(1)
+	go say("World", &wg)
+
+	wg.Wait()
+
+	go func(text string) {
+		fmt.Println(text)
+	}("Anonymous Function!, Byeee...")
+
+	time.Sleep(time.Second * 1)
 
 }
