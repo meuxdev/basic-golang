@@ -4,3 +4,7 @@ build/
 # VIM SWAP FILES
 *.swp
 *.swo
+
+# vendor
+*/vendor
+*/echo
